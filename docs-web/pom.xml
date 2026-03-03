@@ -181,11 +181,21 @@
             <artifactId>jetty-maven-plugin</artifactId>
             <configuration>
               <systemProperties>
-                <application.mode>dev</application.mode>
-                <docs.home>../data/docs</docs.home>
+                <systemProperty>
+                  <name>application.mode</name>
+                  <value>dev</value>
+                </systemProperty>
+                <systemProperty>
+                  <name>docs.home</name>
+                  <value>../data/docs</value>
+                </systemProperty>
               </systemProperties>
               <webApp>
-                <contextPath>/docs-web</contextPath>
+                <contextPath>/</contextPath>
+                <resourceBases>
+                  <resourceBase>${project.basedir}/src/main/webapp/src</resourceBase>
+                  <resourceBase>${project.basedir}/src/main/webapp</resourceBase>
+                </resourceBases>
                 <overrideDescriptor>${project.basedir}/src/dev/main/webapp/web-override.xml</overrideDescriptor>
               </webApp>
             </configuration>
