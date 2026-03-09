@@ -169,7 +169,7 @@ angular.module('docs').controller('DocumentEdit', function($rootScope, $scope, $
           // Send the file
           $.ajax({
             type: 'PUT',
-            url: '../api/file',
+            url: 'api/file',
             data: formData,
             cache: false,
             contentType: false,

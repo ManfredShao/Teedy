@@ -148,7 +148,7 @@ angular.module('docs').controller('DocumentViewContent', function ($scope, $root
     newfile.status = $translate.instant('document.view.content.upload_progress');
     return Upload.upload({
       method: 'PUT',
-      url: '../api/file',
+      url: 'api/file',
       file: file,
       fields: {
         id: $stateParams.id,

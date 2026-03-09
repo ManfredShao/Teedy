@@ -18,7 +18,7 @@ angular.module('docs').controller('ModalImport', function ($scope, $uibModalInst
 
   $.ajax({
     type: 'PUT',
-    url: '../api/document/eml',
+    url: 'api/document/eml',
     data: formData,
     cache: false,
     contentType: false,

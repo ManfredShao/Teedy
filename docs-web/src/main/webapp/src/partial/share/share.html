@@ -10,7 +10,7 @@
           </button>
           <ul class="dropdown-menu">
             <li>
-              <a ng-href="../api/file/zip?id={{ document.id }}&share={{ $stateParams.shareId }}">
+              <a ng-href="api/file/zip?id={{ document.id }}&share={{ $stateParams.shareId }}">
                 <span class="fas fa-download"></span>
                 {{ 'document.view.download_files' | translate }}
               </a>
@@ -97,7 +97,7 @@
           <div class="thumbnail">
             <a class="file-thumbnail" ng-click="openFile(file)"
                uib-tooltip="{{ file.mimetype }} | {{ file.size | filesize }}" tooltip-placement="top">
-              <img ng-src="../api/file/{{ file.id }}/data?size=thumb&share={{ $stateParams.shareId }}" />
+              <img ng-src="api/file/{{ file.id }}/data?size=thumb&share={{ $stateParams.shareId }}" />
             </a>
 
             <div class="file-info">
@@ -124,7 +124,7 @@
         <tr ng-repeat="file in files">
           <td class="pointer" ng-click="openFile(file)">
             <div class="thumbnail-list">
-              <img ng-src="../api/file/{{ file.id }}/data?size=thumb&share={{ $stateParams.shareId }}" />
+              <img ng-src="api/file/{{ file.id }}/data?size=thumb&share={{ $stateParams.shareId }}" />
             </div>
           </td>
           <td class="pointer" ng-click="openFile(file)">

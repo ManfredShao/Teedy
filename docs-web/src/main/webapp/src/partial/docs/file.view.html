@@ -36,7 +36,7 @@
 
 <div class="text-center" style="position: relative;" ng-if="$stateParams.fileId">
   <!-- Standard preview -->
-  <img ng-src="../api/file/{{ $stateParams.fileId }}/data?size=web"
+  <img ng-src="api/file/{{ $stateParams.fileId }}/data?size=web"
        ng-init="error = false"
        img-error="error = true"
        ng-show="!error && canDisplayPreview()" />
@@ -46,7 +46,7 @@
      ng-init="videoPlayer = false" ng-click="videoPlayer = true">
     <span class="fas fa-play-circle" ng-if="!videoPlayer"></span>
     <video ng-if="videoPlayer" autoplay="autoplay" loop="loop"
-           controls="controls" ng-src="../api/file/{{ $stateParams.fileId }}/data"></video>
+           controls="controls" ng-src="api/file/{{ $stateParams.fileId }}/data"></video>
   </a>
 
   <!-- PDF viewer -->

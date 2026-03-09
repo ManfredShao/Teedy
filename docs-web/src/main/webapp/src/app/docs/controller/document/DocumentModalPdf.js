@@ -13,7 +13,7 @@ angular.module('docs').controller('DocumentModalPdf', function ($scope, $window,
 
   // Export to PDF
   $scope.exportPdf = function() {
-    $window.open('../api/document/' + $stateParams.id
+    $window.open('api/document/' + $stateParams.id
         + '/pdf?metadata=' + $scope.export.metadata
         + '&comments=' + $scope.export.comments
         + '&fitimagetopage=' + $scope.export.fitimagetopage

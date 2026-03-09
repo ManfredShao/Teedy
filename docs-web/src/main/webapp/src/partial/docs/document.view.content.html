@@ -79,7 +79,7 @@
 
         <a class="file-thumbnail" ng-click="openFile(file, $event)"
            uib-tooltip="{{ file.mimetype }} | {{ file.size | filesize }}" tooltip-placement="top">
-          <img ng-src="../api/file/{{ file.id }}/data?size=thumb" />
+          <img ng-src="api/file/{{ file.id }}/data?size=thumb" />
         </a>
 
         <div class="file-info">
@@ -92,7 +92,7 @@
               </button>
               <ul class="dropdown-menu" uib-dropdown-menu>
                 <li>
-                  <a ng-href="../api/file/{{ file.id }}/data" target="_blank">
+                  <a ng-href="api/file/{{ file.id }}/data" target="_blank">
                     <span class="fas fa-download"></span>
                     {{ 'download' | translate }}
                   </a>
@@ -165,7 +165,7 @@
     <tr ng-repeat="file in files" ng-class="{ 'active': openedFile.id == file.id }">
       <td class="pointer" ng-click="openFile(file, $event)">
         <div class="thumbnail-list">
-          <img ng-src="../api/file/{{ file.id }}/data?size=thumb" />
+          <img ng-src="api/file/{{ file.id }}/data?size=thumb" />
         </div>
       </td>
       <td class="pointer" ng-click="openFile(file, $event)">
@@ -184,7 +184,7 @@
           </button>
           <ul class="dropdown-menu" uib-dropdown-menu>
             <li>
-              <a ng-href="../api/file/{{ file.id }}/data" target="_blank">
+              <a ng-href="api/file/{{ file.id }}/data" target="_blank">
                 <span class="fas fa-download"></span>
                 {{ 'download' | translate }}
               </a>

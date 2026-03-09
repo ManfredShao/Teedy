@@ -48,14 +48,14 @@ angular.module('share').controller('FileModalView', function($uibModalInstance, 
    * Open the file in a new window.
    */
   $scope.openFile = function() {
-    window.open('../api/file/' + $stateParams.fileId + '/data?share=' + $stateParams.shareId);
+    window.open('api/file/' + $stateParams.fileId + '/data?share=' + $stateParams.shareId);
   };
 
   /**
    * Print the file.
    */
   $scope.printFile = function() {
-    var popup = window.open('../api/file/' + $stateParams.fileId + '/data', '_blank');
+    var popup = window.open('api/file/' + $stateParams.fileId + '/data', '_blank');
     popup.onload = function () {
       popup.print();
       popup.close();

@@ -13,7 +13,7 @@ angular.module('share').controller('ShareModalPdf', function ($scope, $window, $
 
   // Export to PDF
   $scope.exportPdf = function() {
-    $window.open('../api/document/' + $stateParams.documentId
+    $window.open('api/document/' + $stateParams.documentId
         + '/pdf?metadata=' + $scope.export.metadata
         + '&comments=' + $scope.export.comments
         + '&fitimagetopage=' + $scope.export.fitimagetopage

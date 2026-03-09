@@ -63,7 +63,7 @@ angular.module('docs').controller('SettingsConfig', function($scope, $rootScope,
     $scope.sendingImage = true;
     $.ajax({
       type: 'PUT',
-      url: '../api/theme/image/' + type,
+      url: 'api/theme/image/' + type,
       data: formData,
       cache: false,
       contentType: false,

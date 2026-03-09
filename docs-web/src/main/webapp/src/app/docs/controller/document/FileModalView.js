@@ -9,7 +9,7 @@ angular.module('docs').controller('FileModalView', function ($uibModalInstance, 
     _.each(files, function (value) {
       if (value.id === $stateParams.fileId) {
         $scope.file = value;
-        $scope.trustedFileUrl = $sce.trustAsResourceUrl('../api/file/' + $stateParams.fileId + '/data');
+        $scope.trustedFileUrl = $sce.trustAsResourceUrl('api/file/' + $stateParams.fileId + '/data');
       }
     });
   };
@@ -77,21 +77,21 @@ angular.module('docs').controller('FileModalView', function ($uibModalInstance, 
    * Open the file in a new window.
    */
   $scope.openFile = function () {
-    window.open('../api/file/' + $stateParams.fileId + '/data');
+    window.open('api/file/' + $stateParams.fileId + '/data');
   };
 
   /**
    * Open the file content a new window.
    */
   $scope.openFileContent = function () {
-    window.open('../api/file/' + $stateParams.fileId + '/data?size=content');
+    window.open('api/file/' + $stateParams.fileId + '/data?size=content');
   };
 
   /**
    * Print the file.
    */
   $scope.printFile = function () {
-    var popup = window.open('../api/file/' + $stateParams.fileId + '/data', '_blank');
+    var popup = window.open('api/file/' + $stateParams.fileId + '/data', '_blank');
     popup.onload = function () {
       popup.print();
       popup.close();

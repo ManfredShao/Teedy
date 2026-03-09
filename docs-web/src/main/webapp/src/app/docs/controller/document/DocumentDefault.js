@@ -51,7 +51,7 @@ angular.module('docs').controller('DocumentDefault', function ($scope, $rootScop
     newfile.status = $translate.instant('document.default.upload_progress');
     return Upload.upload({
       method: 'PUT',
-      url: '../api/file',
+      url: 'api/file',
       file: file
     })
         .progress(function (e) {

@@ -52,7 +52,7 @@ angular.module('share',
   });
   
   // Configuring Restangular
-  RestangularProvider.setBaseUrl('../api');
+  RestangularProvider.setBaseUrl('api');
 
   // Configuring Angular Translate
   $translateProvider
