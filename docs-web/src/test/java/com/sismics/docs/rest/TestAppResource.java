@@ -156,7 +156,7 @@ public class TestAppResource extends BaseJerseyTest {
         String guestToken = clientUtil.login("guest", "", false);
 
         // Guest cannot delete himself
-        response = target().path("/user").request()
+        Response response = target().path("/user").request()
                 .cookie(TokenBasedSecurityFilter.COOKIE_NAME, guestToken)
                 .delete();
         Assert.assertEquals(Status.BAD_REQUEST.getStatusCode(), response.getStatus());
