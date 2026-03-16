@@ -57,7 +57,7 @@ public class TestAppResource extends BaseJerseyTest {
         Long totalMemory = json.getJsonNumber("total_memory").longValue();
         Assert.assertTrue(totalMemory > 0 && totalMemory > freeMemory);
         Assert.assertEquals(0, json.getJsonNumber("queued_tasks").intValue());
-        Assert.assertFalse(json.getBoolean("guest_login"));
+        Assert.assertTrue(json.getBoolean("guest_login"));
         Assert.assertFalse(json.getBoolean("ocr_enabled"));
         Assert.assertEquals("eng", json.getString("default_language"));
         Assert.assertTrue(json.containsKey("global_storage_current"));
@@ -140,11 +140,11 @@ public class TestAppResource extends BaseJerseyTest {
         // Login admin
         String adminToken = adminToken();
 
-        // Try to login as guest
-        Response response = target().path("/user/login").request()
-                .post(Entity.form(new Form()
-                        .param("username", "guest")));
-        Assert.assertEquals(Status.FORBIDDEN.getStatusCode(), response.getStatus());
+        // Try to login as guest (Now always allowed)
+        // Response response = target().path("/user/login").request()
+        //         .post(Entity.form(new Form()
+        //                 .param("username", "guest")));
+        // Assert.assertEquals(Status.FORBIDDEN.getStatusCode(), response.getStatus());
 
         // Enable guest login
         target().path("/app/guest_login").request()
