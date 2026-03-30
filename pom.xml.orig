@@ -84,13 +84,6 @@
     </repository>
   </repositories>
 
-  <distributionManagement>
-    <site>
-      <id>local-site</id>
-      <url>http://sismics.com/docs/</url>
-    </site>
-  </distributionManagement>
-
   <build>
     <plugins>
       <plugin>

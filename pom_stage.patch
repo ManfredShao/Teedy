@@ -1,0 +1,16 @@
+--- pom.xml
++++ pom.xml
+@@ -107,6 +107,13 @@
+     </repository>
+   </repositories>
+ 
++  <distributionManagement>
++    <site>
++      <id>local-site</id>
++      <url>file://${project.basedir}/target/staging</url>
++    </site>
++  </distributionManagement>
++
+   <build>
+     <plugins>
+ 
