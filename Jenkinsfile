@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/opt/homebrew/bin:${env.PATH}"
+    }
+
     stages {
         stage('Clean') {
             steps {
@@ -46,6 +50,8 @@ pipeline {
 
     post {
         always {
+            junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
+            
             archiveArtifacts artifacts: '**/target/site/**/*.*', fingerprint: true
             archiveArtifacts artifacts: '**/target/**/*.jar', fingerprint: true
             archiveArtifacts artifacts: '**/target/**/*.war', fingerprint: true
