@@ -130,6 +130,7 @@
         <configuration>
           <forkCount>1</forkCount>
           <reuseForks>false</reuseForks>
+          <excludesFile>${maven.multiModuleProjectDirectory}/surefire-excludes.txt</excludesFile>
         </configuration>
       </plugin>
 
@@ -150,6 +151,28 @@
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>${org.apache.maven.plugins.maven-project-info-reports-plugin.version}</version>
       </plugin>
+
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.9</version>
+        <inherited>true</inherited>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <!-- attached to Maven test phase -->
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+              <goals>
+            <goal>report</goal>
+            </goals>
+            </execution>
+        </executions>
+        </plugin>
     </plugins>
   </build>
 
@@ -165,6 +188,40 @@
           </rulesets>
         </configuration>
       </plugin>
+
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-report-plugin</artifactId>
+      <version>3.0.0</version>
+      <reportSets>
+      <reportSet>
+      <id>aggregate</id>
+      <inherited>false</inherited>
+      <reports>
+      <report>report</report>
+      </reports>
+      <configuration>
+      <aggregate>true</aggregate>
+      </configuration>
+      </reportSet>
+      </reportSets>
+      </plugin>
+
+      <plugin>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.8.9</version>
+      <reportSets>
+      <reportSet>
+      <id>aggregate</id>
+      <inherited>false</inherited>
+      <reports>
+      <report>report-aggregate</report>
+      </reports>
+      </reportSet>
+      </reportSets>
+      </plugin>
+      
     </plugins>
   </reporting>
 

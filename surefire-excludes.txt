@@ -1,0 +1,2 @@
+com.sismics.util.format.TestPdfFormatHandler#testIssue373
+com.sismics.docs.core.util.TestFileUtil#extractContentScannedPdf
