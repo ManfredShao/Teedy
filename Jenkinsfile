@@ -23,7 +23,7 @@ pipeline {
                     userRemoteConfigs: [[url: 'https://github.com/ManfredShao/Teedy.git']]
                 )
                 // 执行 Maven 编译打包，跳过测试
-                sh 'mvn -B -DskipTests clean package'
+                sh '/opt/homebrew/bin/mvn -B -DskipTests clean package'
             }
         }
 
